@@ -2,9 +2,11 @@ package co.edu.ufps.models;
 
 import java.util.Date;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
+@AllArgsConstructor
 public class Usuario {
 	
 	private String username;
