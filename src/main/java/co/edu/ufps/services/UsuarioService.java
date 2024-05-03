@@ -6,24 +6,24 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import co.edu.ufps.models.Usuario;
+import co.edu.ufps.models.UsuarioDTO;
 
 @Service
 public class UsuarioService {
 	
-    private List<Usuario> usuarios = new ArrayList<>();
+    private List<UsuarioDTO> usuarios = new ArrayList<>();
     
     public UsuarioService() {
-        usuarios.add(new Usuario("Usuario1", "Usuario 1", "usuario1@example.com", new Date(), "A"));
-        usuarios.add(new Usuario("Usuario2", "Usuario 2", "usuario2@example.com", new Date(), "A"));
+        usuarios.add(new UsuarioDTO("Usuario1", "Usuario 1", "usuario1@example.com", new Date(), "A"));
+        usuarios.add(new UsuarioDTO("Usuario2", "Usuario 2", "usuario2@example.com", new Date(), "A"));
     }
     
-    public List<Usuario> getAllUsers() {
+    public List<UsuarioDTO> getAllUsers() {
         return usuarios;
     }
     
-    public Usuario getUserById(String username) {
-        for (Usuario user : usuarios) {
+    public UsuarioDTO getUserById(String username) {
+        for (UsuarioDTO user : usuarios) {
             if (user.getUsername().equals(username)) {
                 return user;
             }
@@ -31,11 +31,11 @@ public class UsuarioService {
         return null;
     }
     
-    public void addUser(Usuario user) {
+    public void addUser(UsuarioDTO user) {
         usuarios.add(user);
     }
     
-    public void updateUser(String username, Usuario user) {
+    public void updateUser(String username, UsuarioDTO user) {
         for (int i = 0; i < usuarios.size(); i++) {
             if (usuarios.get(i).getUsername().equals(username)) {
                 usuarios.set(i, user);
